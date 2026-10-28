@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luto't Likha Bakeshop | Darat, Pinili, Ilocos Norte</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Lucide Icons (Minimalist & Professional) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bakery: {
+                            50: '#fdfbf7',
+                            100: '#f7f2e8',
+                            200: '#efe3cf',
+                            300: '#e1caa8',
+                            400: '#cfaa7b',
+                            500: '#bc8a53',
+                            600: '#a36d41',
+                            700: '#855136',
+                            800: '#6d4231',
+                            900: '#5a372b',
+                            accent: '#d97706',
+                            terracotta: '#c25e38'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bakery-50 text-gray-800 font-sans antialiased selection:bg-bakery-200 selection:text-bakery-900">
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-bakery-50/90 backdrop-blur-md border-b border-bakery-200 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo & Name -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <div class="w-11 h-11 bg-bakery-900 text-white rounded-xl flex items-center justify-center shadow-sm">
+                        <i data-lucide="chef-hat" class="w-6 h-6 text-bakery-300"></i>
+                    </div>
+                    <div>
+                        <span class="font-serif text-2xl font-bold text-bakery-900 block leading-tight">Luto't Likha</span>
+                        <span class="text-[10px] font-semibold text-bakery-600 tracking-widest uppercase block">Bakeshop • Darat, Pinili</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-bakery-800">
+                    <a href="#about" class="hover:text-bakery-terracotta transition-colors">About Us</a>
+                    <a href="#menu" class="hover:text-bakery-terracotta transition-colors">Featured Menu</a>
+                    <a href="#features" class="hover:text-bakery-terracotta transition-colors">Why Choose Us</a>
+                    <a href="#order" class="hover:text-bakery-terracotta transition-colors">Order Now</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="#order" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-bakery-terracotta hover:bg-bakery-700 shadow-sm transition-all duration-200 hover:scale-[1.02]">
+                        <i data-lucide="shopping-bag" class="w-4 h-4"></i> Order Online
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 rounded-md text-bakery-800 hover:text-bakery-terracotta focus:outline-none" aria-label="Toggle Menu">
+                        <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-bakery-100 border-b border-bakery-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-bakery-800 hover:bg-bakery-200">About Us</a>
+            <a href="#menu" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-bakery-800 hover:bg-bakery-200">Featured Menu</a>
+            <a href="#features" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-bakery-800 hover:bg-bakery-200">Why Choose Us</a>
+            <a href="#order" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-bakery-800 hover:bg-bakery-200">Order Now</a>
+            <a href="#order" class="mobile-link w-full text-center flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-semibold text-white bg-bakery-terracotta">
+                <i data-lucide="shopping-bag" class="w-4 h-4"></i> Order Online
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-b from-bakery-100 to-bakery-50 py-16 md:py-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Hero Text -->
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-100/80 text-amber-900 text-xs sm:text-sm font-medium border border-amber-200">
+                        <i data-lucide="flame" class="w-4 h-4 text-bakery-terracotta"></i> Freshly Baked Daily in Darat, Pinili, Ilocos Norte
+                    </div>
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-bakery-900 leading-tight">
+                        Luto't Likha <span class="text-bakery-terracotta italic">Bakeshop</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-gray-700 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Freshly Baked Local Breads & Customized Pasalubong Packages in Darat, Pinili, Ilocos Norte, Philippines. Taste authentic warmth in every bite!
+                    </p>
+
+                    <!-- Hero Actions -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#order" class="w-full sm:w-auto px-8 py-4 rounded-full text-base font-semibold text-white bg-bakery-terracotta hover:bg-bakery-700 shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
+                            <i data-lucide="smartphone" class="w-5 h-5"></i> Order via Mobile App / Form
+                        </a>
+                        <a href="#menu" class="w-full sm:w-auto px-8 py-4 rounded-full text-base font-semibold text-bakery-800 bg-white hover:bg-bakery-100 border border-bakery-300 shadow-sm transition-all duration-300 text-center">
+                            View Menu
+                        </a>
+                    </div>
+
+                    <!-- Quick Highlights -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-bakery-200/80 text-center lg:text-left">
+                        <div>
+                            <span class="block font-serif font-bold text-xl sm:text-2xl text-bakery-900">100%</span>
+                            <span class="text-xs text-gray-600">Fresh Ingredients</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif font-bold text-xl sm:text-2xl text-bakery-900">₱150</span>
+                            <span class="text-xs text-gray-600">Avg. Order Price</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif font-bold text-xl sm:text-2xl text-bakery-900">Fast</span>
+                            <span class="text-xs text-gray-600">Local Pickup/Delivery</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual -->
+                <div class="relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-bakery-200">
+                        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Freshly baked breads and pastries" 
+                             class="w-full h-[380px] sm:h-[450px] object-cover hover:scale-105 transition-transform duration-700">
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm p-4 rounded-2xl shadow-md border border-bakery-100 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-amber-800">
+                                    <i data-lucide="clock" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500 font-medium">Baking Hours</p>
+                                    <p class="text-sm font-bold text-bakery-900">Daily: 5:00 AM - 7:00 PM</p>
+                                </div>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5"></span> Open Now
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                
+                <!-- About Card -->
+                <div class="order-2 md:order-1 relative">
+                    <div class="bg-bakery-50 rounded-3xl p-6 sm:p-8 border border-bakery-200 shadow-sm space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-bakery-900 text-white flex items-center justify-center shadow-sm">
+                                <i data-lucide="store" class="w-6 h-6 text-bakery-200"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-serif font-bold text-xl text-bakery-900">Pinili's Pride Bakeshop</h3>
+                                <p class="text-xs text-gray-500">Darat, Pinili, Ilocos Norte</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
+                            At <strong>Luto't Likha Bakeshop</strong> in Darat, Pinili, Ilocos Norte, Philippines, we combine traditional baking heritage with modern convenience. No more long travels to distant neighboring towns just to get freshly baked bread or pasalubong packages!
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 pt-2">
+                            <div class="p-4 rounded-2xl bg-white border border-bakery-200">
+                                <i data-lucide="heart" class="w-5 h-5 text-bakery-terracotta mb-2"></i>
+                                <span class="text-xs text-gray-500 block">Made With Love</span>
+                                <span class="text-sm font-bold text-bakery-900">Authentic Recipes</span>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-white border border-bakery-200">
+                                <i data-lucide="truck" class="w-5 h-5 text-bakery-terracotta mb-2"></i>
+                                <span class="text-xs text-gray-500 block">Fast Convenience</span>
+                                <span class="text-sm font-bold text-bakery-900">App & Pickups</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Text -->
+                <div class="order-1 md:order-2 space-y-6">
+                    <span class="text-bakery-terracotta font-semibold text-xs tracking-widest uppercase">Our Story & Mission</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-bakery-900">
+                        Bringing Fresh, Oven-Baked Goodness Directly To Your Home
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Local residents, workers, and students in Darat, Pinili often had to settle for pre-packaged goods or travel far. Luto't Likha was born to solve this problem—providing hot, fresh traditional breads and ready-to-go pasalubong boxes daily.
+                    </p>
+                    <ul class="space-y-3 text-gray-700 text-sm sm:text-base">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-bakery-terracotta mt-0.5 flex-shrink-0"></i>
+                            <span>Freshly prepared every morning using high-quality ingredients.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-bakery-terracotta mt-0.5 flex-shrink-0"></i>
+                            <span>Customizable pasalubong packages perfect for reunions, gifts, and gatherings.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-bakery-terracotta mt-0.5 flex-shrink-0"></i>
+                            <span>Seamless online & mobile ordering for quick pickup or local delivery.</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Menu Section -->
+    <section id="menu" class="py-16 md:py-24 bg-bakery-100/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+                <span class="text-bakery-terracotta font-semibold text-xs tracking-widest uppercase">Fresh Daily Specials</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-bakery-900">Featured Bakes & Packages</h2>
+                <p class="text-gray-600">Explore our bestsellers—from everyday meryenda cravings to special pasalubong packages.</p>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Product Card 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-bakery-200 flex flex-col group">
+                    <div class="relative h-48 overflow-hidden bg-bakery-200">
+                        <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=600&q=80" 
+                             alt="Traditional Ilocano Bread" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 right-3 bg-amber-800 text-white text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full shadow-sm">Bestseller</span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-serif font-bold text-lg text-bakery-900 group-hover:text-bakery-terracotta transition-colors">Traditional Ilocano Pan</h3>
+                            <p class="text-xs text-gray-500 mt-1">Soft, warm traditional local bread baked fresh every 5:00 AM.</p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-bakery-100 pt-3">
+                            <span class="font-bold text-lg text-bakery-800">₱45 <span class="text-xs font-normal text-gray-500">/ pack</span></span>
+                            <a href="#order" onclick="selectProduct('Traditional Ilocano Pan')" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-bakery-50 text-bakery-800 hover:bg-bakery-terracotta hover:text-white transition-colors">Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-bakery-200 flex flex-col group">
+                    <div class="relative h-48 overflow-hidden bg-bakery-200">
+                        <img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=600&q=80" 
+                             alt="Special Ensaymada" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-serif font-bold text-lg text-bakery-900 group-hover:text-bakery-terracotta transition-colors">Special Cheese Ensaymada</h3>
+                            <p class="text-xs text-gray-500 mt-1">Rich, buttery brioche topped with grated real cheese and sweet glaze.</p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-bakery-100 pt-3">
+                            <span class="font-bold text-lg text-bakery-800">₱35 <span class="text-xs font-normal text-gray-500">/ pc</span></span>
+                            <a href="#order" onclick="selectProduct('Special Cheese Ensaymada')" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-bakery-50 text-bakery-800 hover:bg-bakery-terracotta hover:text-white transition-colors">Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-bakery-200 flex flex-col group">
+                    <div class="relative h-48 overflow-hidden bg-bakery-200">
+                        <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80" 
+                             alt="Customized Pasalubong Box" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 right-3 bg-bakery-terracotta text-white text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full shadow-sm">Popular Gift</span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-serif font-bold text-lg text-bakery-900 group-hover:text-bakery-terracotta transition-colors">Customized Pasalubong Box</h3>
+                            <p class="text-xs text-gray-500 mt-1">An assortment of Pinili special treats, packaged neatly for loved ones.</p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-bakery-100 pt-3">
+                            <span class="font-bold text-lg text-bakery-800">₱250 <span class="text-xs font-normal text-gray-500">/ box</span></span>
+                            <a href="#order" onclick="selectProduct('Customized Pasalubong Box')" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-bakery-50 text-bakery-800 hover:bg-bakery-terracotta hover:text-white transition-colors">Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-bakery-200 flex flex-col group">
+                    <div class="relative h-48 overflow-hidden bg-bakery-200">
+                        <img src="https://images.unsplash.com/photo-1621236378699-8597faf6a176?auto=format&fit=crop&w=600&q=80" 
+                             alt="Fresh Meryenda Combo" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-serif font-bold text-lg text-bakery-900 group-hover:text-bakery-terracotta transition-colors">Fresh Meryenda Set</h3>
+                            <p class="text-xs text-gray-500 mt-1">Perfect afternoon combo featuring local pastries and refreshing drink.</p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-bakery-100 pt-3">
+                            <span class="font-bold text-lg text-bakery-800">₱150 <span class="text-xs font-normal text-gray-500">/ set</span></span>
+                            <a href="#order" onclick="selectProduct('Fresh Meryenda Set')" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-bakery-50 text-bakery-800 hover:bg-bakery-terracotta hover:text-white transition-colors">Order</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Unique Selling Proposition (UVP) / Features Section -->
+    <section id="features" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+                <span class="text-bakery-terracotta font-semibold text-xs tracking-widest uppercase">Why Choose Luto't Likha</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-bakery-900">Better Than Regular Solutions</h2>
+                <p class="text-gray-600">Designed around convenience, authenticity, and fresh local taste.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Feature 1 -->
+                <div class="bg-bakery-50 p-8 rounded-3xl border border-bakery-200 transition-all duration-300 space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-bakery-100 text-bakery-800 flex items-center justify-center">
+                        <i data-lucide="flame" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-bakery-900">1. Freshly Baked Morning Bakes</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        We start baking early every morning so you enjoy hot, soft, and fresh bread right when you wake up in Darat, Pinili.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-bakery-50 p-8 rounded-3xl border border-bakery-200 transition-all duration-300 space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-bakery-100 text-bakery-800 flex items-center justify-center">
+                        <i data-lucide="smartphone" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-bakery-900">2. Mobile App & Digital Ordering</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Skip waiting in long lines. Easily browse our daily menu, reserve your items, and choose delivery or express pickup.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-bakery-50 p-8 rounded-3xl border border-bakery-200 transition-all duration-300 space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-bakery-100 text-bakery-800 flex items-center justify-center">
+                        <i data-lucide="gift" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-bakery-900">3. Custom Pasalubong Packages</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Personalize gift boxes filled with traditional delicacies perfect for family gatherings and celebrations.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Order & Contact Section -->
+    <section id="order" class="py-16 md:py-24 bg-bakery-100/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Contact & Location Info -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-bakery-terracotta font-semibold text-xs tracking-widest uppercase">Place An Order</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-bakery-900 mt-2">Get Your Fresh Bakes Today!</h2>
+                        <p class="text-gray-600 mt-3 text-sm leading-relaxed">
+                            Fill out the order form, or visit us in Darat, Pinili. We will confirm your order immediately via SMS or call!
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-bakery-200 shadow-sm">
+                            <div class="w-10 h-10 rounded-xl bg-bakery-50 text-bakery-800 flex items-center justify-center flex-shrink-0 border border-bakery-200">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-bakery-900 text-sm">Bakery Location</h4>
+                                <p class="text-xs text-gray-600 mt-0.5">Darat, Pinili, Ilocos Norte, Philippines</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-bakery-200 shadow-sm">
+                            <div class="w-10 h-10 rounded-xl bg-bakery-50 text-bakery-800 flex items-center justify-center flex-shrink-0 border border-bakery-200">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-bakery-900 text-sm">Phone / GCash Contact</h4>
+                                <p class="text-xs text-gray-600 mt-0.5">+63 912 345 6789</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-bakery-200 shadow-sm">
+                            <div class="w-10 h-10 rounded-xl bg-bakery-50 text-bakery-800 flex items-center justify-center flex-shrink-0 border border-bakery-200">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-bakery-900 text-sm">Email Inquiries</h4>
+                                <p class="text-xs text-gray-600 mt-0.5">lutotlikhabakeshop@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- App Promo Box -->
+                    <div class="p-6 rounded-3xl bg-bakery-900 text-white shadow-md space-y-3">
+                        <div class="flex items-center gap-2 text-amber-300 font-bold text-sm">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i> Mobile App Launching Soon!
+                        </div>
+                        <p class="text-xs text-bakery-200 leading-relaxed">
+                            Download the official Luto't Likha Bakeshop app to enjoy exclusive discounts, order tracking, and loyalty rewards!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Interactive Order Form -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-md border border-bakery-200 relative">
+                        
+                        <!-- Confirmation Alert Overlay -->
+                        <div id="success-alert" class="hidden absolute inset-0 bg-white/98 backdrop-blur-md rounded-3xl z-20 flex flex-col items-center justify-center p-8 text-center space-y-4">
+                            <div class="w-16 h-16 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center">
+                                <i data-lucide="check" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="font-serif font-bold text-2xl text-bakery-900">Order Received!</h3>
+                            <p class="text-sm text-gray-600 max-w-md">
+                                Thank you for ordering from <strong>Luto't Likha Bakeshop</strong>. Our team in Darat, Pinili is preparing your treats now. We'll contact you shortly!
+                            </p>
+                            <button onclick="resetOrderForm()" class="px-6 py-2.5 rounded-full bg-bakery-terracotta text-white font-semibold text-sm hover:bg-bakery-700 transition-colors">
+                                Place Another Order
+                            </button>
+                        </div>
+
+                        <h3 class="font-serif font-bold text-2xl text-bakery-900 mb-6">Quick Order Form</h3>
+                        
+                        <form id="bakery-order-form" onsubmit="handleOrderSubmit(event)" class="space-y-4">
+                            
+                            <!-- Full Name -->
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">Your Full Name *</label>
+                                <input type="text" required placeholder="e.g. Mika Ibera" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-bakery-terracotta focus:border-bakery-terracotta outline-none transition-all text-sm">
+                            </div>
+
+                            <!-- Phone Number -->
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">Mobile / Phone Number *</label>
+                                <input type="tel" required placeholder="0912 345 6789" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-bakery-terracotta focus:border-bakery-terracotta outline-none transition-all text-sm">
+                            </div>
+
+                            <!-- Select Product -->
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">Select Baked Good / Package *</label>
+                                <select id="product-select" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-bakery-terracotta focus:border-bakery-terracotta outline-none transition-all text-sm bg-white">
+                                    <option value="" disabled selected>Choose item...</option>
+                                    <option value="Traditional Ilocano Pan">Traditional Ilocano Pan (₱45)</option>
+                                    <option value="Special Cheese Ensaymada">Special Cheese Ensaymada (₱35)</option>
+                                    <option value="Customized Pasalubong Box">Customized Pasalubong Box (₱250)</option>
+                                    <option value="Fresh Meryenda Set">Fresh Meryenda Set (₱150)</option>
+                                    <option value="Other / Multiple Items">Other / Multiple Custom Items</option>
+                                </select>
+                            </div>
+
+                            <!-- Pickup or Delivery Option -->
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">Fulfillment Method *</label>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <label class="flex items-center gap-2 p-3 rounded-xl border border-gray-200 cursor-pointer hover:bg-bakery-50">
+                                        <input type="radio" name="fulfillment" value="pickup" checked class="text-bakery-terracotta focus:ring-bakery-terracotta">
+                                        <span class="text-sm font-medium text-gray-700">Store Pickup (Pinili)</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 p-3 rounded-xl border border-gray-200 cursor-pointer hover:bg-bakery-50">
+                                        <input type="radio" name="fulfillment" value="delivery" class="text-bakery-terracotta focus:ring-bakery-terracotta">
+                                        <span class="text-sm font-medium text-gray-700">Local Delivery</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Special Notes -->
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">Special Instructions / Customization</label>
+                                <textarea rows="3" placeholder="Specify quantity, delivery address, or gift box preferences..." class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-bakery-terracotta focus:border-bakery-terracotta outline-none transition-all text-sm"></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="w-full py-4 rounded-xl bg-bakery-terracotta hover:bg-bakery-700 text-white font-bold text-base shadow-sm hover:shadow-md transition-all duration-200">
+                                Submit Order Now
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-bakery-900 text-bakery-200 py-12 border-t border-bakery-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Footer Brand -->
+                <div class="flex items-center space-x-3 text-center md:text-left">
+                    <div class="w-10 h-10 bg-bakery-800 text-white rounded-xl flex items-center justify-center">
+                        <i data-lucide="chef-hat" class="w-5 h-5 text-bakery-300"></i>
+                    </div>
+                    <div>
+                        <span class="font-serif text-xl font-bold text-white block">Luto't Likha Bakeshop</span>
+                        <span class="text-xs text-bakery-400">Darat, Pinili, Ilocos Norte, Philippines • Fresh Daily</span>
+                    </div>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="flex items-center space-x-6 text-xs text-bakery-300">
+                    <a href="#about" class="hover:text-white transition-colors">About</a>
+                    <a href="#menu" class="hover:text-white transition-colors">Menu</a>
+                    <a href="#order" class="hover:text-white transition-colors">Order</a>
+                </div>
+            </div>
+
+            <div class="border-t border-bakery-800 pt-6 text-center text-xs text-bakery-400 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p>&copy; 2026 Luto't Likha Bakeshop. All rights reserved.</p>
+                <p>Darat, Pinili, Ilocos Norte, Philippines</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Render Lucide Icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Select Product helper from menu cards
+        function selectProduct(productName) {
+            const selectElem = document.getElementById('product-select');
+            if (selectElem) {
+                selectElem.value = productName;
+            }
+        }
+
+        // Handle Order Form Submission
+        function handleOrderSubmit(event) {
+            event.preventDefault();
+            const successAlert = document.getElementById('success-alert');
+            successAlert.classList.remove('hidden');
+        }
+
+        // Reset Order Form
+        function resetOrderForm() {
+            document.getElementById('bakery-order-form').reset();
+            document.getElementById('success-alert').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
